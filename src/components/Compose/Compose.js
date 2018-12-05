@@ -21,7 +21,8 @@ export default class Compose extends Component {
   }
 
   createPost() {
-
+    this.props.createPostFn(this.state.text);
+    this.setState({text: ""});
   }
 
   render() {
@@ -38,9 +39,9 @@ export default class Compose extends Component {
 
           {/* This is where you type the message for your new post */}
           <input className="Compose__input"
-                 placeholder="What's on your mind?"
-                 value={ text }
-                 onChange={ ( e ) => this.updateText( e.target.value ) } />
+                placeholder="What's on your mind?"
+                value={ text }
+                onChange={ ( e ) => this.updateText( e.target.value ) } />
 
         </div>
 
